@@ -44,8 +44,25 @@ cv-tailor
    git clone https://github.com/yourusername/cv-tailor.git
    cd cv-tailor
    ```
+## Setting Up a Virtual Environment
 
-2. Install the required dependencies:
+To ensure that all dependencies are installed and managed correctly, it's recommended to use a virtual environment. Follow these steps to set up and activate a virtual environment, and install the required packages:
+
+1. **Create a virtual environment:**
+
+    ```sh
+    python3 -m venv venv
+    ```
+
+    This will create a virtual environment named `venv` in your project directory.
+
+2. **Activate the virtual environment:**
+
+    ```sh
+    source venv/bin/activate
+    ```
+    
+3. Install the required dependencies:
    ```
    pip install -r requirements.txt
    ```
