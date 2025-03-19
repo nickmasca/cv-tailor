@@ -1,14 +1,15 @@
 # CV Tailor
 
-CV Tailor is a Python application designed to help users customize their CVs according to specific job specifications. The application includes features for scraping job specifications, loading CVs from Google Docs, tailoring the CV using a locally hosted open-source language model, viewing changes as diffs, and saving the tailored CV in various formats.
+CV Tailor is a Python application designed to help users customize their CVs according to specific job specifications. The application includes features for loading job specifications from a local PDF file or clipboard, loading CVs from Google Docs, tailoring the CV using a locally hosted open-source language model, viewing changes as diffs, and saving the tailored CV in various formats.
 
 ## Features
 
-1. **Job Specification Scraping**: Extract job specifications from a provided URL or PDF document.
+1. **Job Specification Loading**: Load job specifications from a local PDF file or clipboard.
 2. **CV Loading**: Load CVs directly from Google Docs using document IDs.
 3. **CV Tailoring**: Utilize an open-source language model to modify the CV based on the job specification.
 4. **Diff Viewing**: Present changes between the original and tailored CVs in a Markdown format for easy review and editing.
 5. **CV Saving**: Save the tailored CV as a PDF or update it in Google Docs.
+
 
 ## Project Structure
 

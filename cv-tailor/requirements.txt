@@ -1,3 +1,7 @@
+pytest==8.3.5
+pytest-mock==3.14.0
+pyperclip==1.9.0
+pdfminer.six
 Flask==2.0.3
 beautifulsoup4==4.10.0
 requests==2.26.0
@@ -8,5 +12,3 @@ markdown==3.3.4
 reportlab==3.6.11
 transformers==4.11.3
 torch==1.10.0
-pytest
-pytest-mock
