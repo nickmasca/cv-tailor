@@ -1,20 +1,19 @@
-from scraper.scraper import Scraper
+from job_spec_reader import read_job_spec_from_pdf, read_job_spec_from_clipboard
 from cv_loader.google_docs_loader import GoogleDocsLoader
 from tailor.llm_tailor import LLMTailor
 from diff_viewer.markdown_diff import generate_diff
 from saver.save_as import Saver
 
 def main():
-    # Step 1: Scrape job specification
-    url = input("Enter the job specification URL: ")
-    pdf_path = input("Enter the path to the job specification PDF (or leave blank): ")
+    # Step 1: Read job specification
+    pdf_path = input("Enter the path to the job specification PDF (or leave blank to use clipboard): ")
     
-    scraper = Scraper()
-    if url:
-        job_spec = scraper.scrape_from_url(url)
-    elif pdf_path:
-        job_spec = scraper.scrape_from_pdf(pdf_path)
+    if pdf_path:
+        job_spec = read_job_spec_from_pdf(pdf_path)
     else:
+        job_spec = read_job_spec_from_clipboard()
+
+    if not job_spec:
         print("No job specification provided.")
         return
 

@@ -1,8 +1,5 @@
-import pytest
 from unittest.mock import patch
-import pyperclip
 from src.job_spec_reader.job_spec_reader import read_job_spec_from_pdf, read_job_spec_from_clipboard
-import tempfile
 import os
 
 @patch("pdfminer.high_level.extract_text", return_value="Sample job spec text")
