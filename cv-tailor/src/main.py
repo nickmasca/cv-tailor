@@ -1,5 +1,5 @@
 from job_spec_reader import read_job_spec_from_pdf, read_job_spec_from_clipboard
-from cv_loader.google_docs_loader import GoogleDocsLoader
+from cv_loader.local_file_loader import LocalFileLoader
 from tailor.llm_tailor import LLMTailor
 from diff_viewer.markdown_diff import generate_diff
 from saver.save_as import Saver
@@ -17,10 +17,14 @@ def main():
         print("No job specification provided.")
         return
 
-    # Step 2: Load CV from Google Docs
-    doc_id = input("Enter the Google Docs document ID for your CV: ")
-    loader = GoogleDocsLoader()
-    cv_text = loader.load_cv(doc_id)
+    # Step 2: Load CV from a local file
+    file_path = input("Enter the path to your CV file (PDF or DOCX): ")
+    loader = LocalFileLoader()
+    try:
+        cv_text = loader.load_cv(file_path)
+    except ValueError as e:
+        print(e)
+        return
 
     # Step 3: Tailor the CV using the LLM
     tailor = LLMTailor()
